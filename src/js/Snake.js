@@ -23,6 +23,7 @@ export default class Snake {
   refresh() {
     for (let i = 0; i < this.snakeTail.length; i++) {
       this.snakeTail[i] = this.snakeTail[i + 1];
+      console.log(this.snakeTail[i + 1]);
     }
 
     this.snakeTail[this.score] = {
@@ -34,17 +35,17 @@ export default class Snake {
     this.y += this.yQuickness;
 
     switch (true) {
-      case this.x > canvas.width:
+      case this.x > canvas.width - size:
         this.x = 0;
         break;
-      case this.y > canvas.height:
+      case this.y > canvas.height - size:
         this.y = 0;
         break;
       case this.x < 0:
-        this.x = canvas.width;
+        this.x = canvas.width - size;
         break;
       case this.y < 0:
-        this.y = canvas.height;
+        this.y = canvas.height - size;
         break;
     }
   }

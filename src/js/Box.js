@@ -7,8 +7,8 @@ export default class Box {
   }
 
   changeLocation() {
-    this.x = Math.floor((Math.random() * width + 1)) * size;
-    this.y = Math.floor((Math.random() * height + 1)) * size;
+    this.x = Math.floor((Math.random() * width)) * size;
+    this.y = Math.floor((Math.random() * height)) * size;
   }
 
   drawBox() {
